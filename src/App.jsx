@@ -52,38 +52,38 @@ const App = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 bg-gray-900 shadow-xl rounded-xl font-sans text-white">
-      <h2 className="text-2xl font-bold mb-6 text-center text-white">Student Form</h2>
+    <div className="max-w-4xl mx-auto mt-10 p-6 bg-slate-900 shadow-2xl rounded-xl font-sans text-white border border-slate-700">
+      <h2 className="text-3xl font-bold mb-6 text-center text-cyan-400">Student Form</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Column */}
         <div className="space-y-4">
           <div>
-            <label className="block font-semibold text-gray-200">Roll No:</label>
+            <label className="block font-semibold text-cyan-300 mb-1">Roll No:</label>
             <input
               type="text"
               name="roll"
               value={form.roll}
               onChange={handleChange}
-              className="w-full border border-gray-600 rounded p-2 bg-gray-800 text-white focus:border-blue-400 focus:outline-none"
+              className="w-full border border-slate-600 rounded-lg p-3 bg-slate-800 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all duration-200"
             />
           </div>
           <div>
-            <label className="block font-semibold text-gray-200">Name:</label>
+            <label className="block font-semibold text-cyan-300 mb-1">Name:</label>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              className="w-full border border-gray-600 rounded p-2 bg-gray-800 text-white focus:border-blue-400 focus:outline-none"
+              className="w-full border border-slate-600 rounded-lg p-3 bg-slate-800 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all duration-200"
             />
           </div>
           <div>
-            <label className="block font-semibold text-gray-200">Course:</label>
+            <label className="block font-semibold text-cyan-300 mb-1">Course:</label>
             <select
               name="course"
               value={form.course}
               onChange={handleChange}
-              className="w-full border border-gray-600 rounded p-2 bg-gray-800 text-white focus:border-blue-400 focus:outline-none"
+              className="w-full border border-slate-600 rounded-lg p-3 bg-slate-800 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all duration-200"
             >
               <option value="btech">BTech</option>
               <option value="mtech">MTech</option>
@@ -91,12 +91,12 @@ const App = () => {
             </select>
           </div>
           <div>
-            <label className="block font-semibold text-gray-200">Specialisation:</label>
+            <label className="block font-semibold text-cyan-300 mb-1">Specialisation:</label>
             <select
               name="specialisation"
               value={form.specialisation}
               onChange={handleChange}
-              className="w-full border border-gray-600 rounded p-2 bg-gray-800 text-white focus:border-blue-400 focus:outline-none"
+              className="w-full border border-slate-600 rounded-lg p-3 bg-slate-800 text-white focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all duration-200"
             >
               <option value="cse">CSE</option>
               <option value="data sci">Data Sci</option>
@@ -109,7 +109,7 @@ const App = () => {
         <div className="space-y-4">
           {form.subjects.map((val, i) => (
             <div key={i}>
-              <label className="block font-semibold text-gray-200">
+              <label className="block font-semibold text-cyan-300 mb-1">
                 Subject {i + 1}:
               </label>
               <input
@@ -119,7 +119,7 @@ const App = () => {
                   isGradeMode ? "Enter grade  (A-F)" : "Enter marks (0–100)"
                 }
                 onChange={(e) => handleSubjectChange(i, e.target.value)}
-                className="w-full border border-gray-600 rounded p-2 bg-gray-800 text-white placeholder-gray-400 focus:border-blue-400 focus:outline-none"
+                className="w-full border border-slate-600 rounded-lg p-3 bg-slate-800 text-white placeholder-slate-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all duration-200"
               />
             </div>
           ))}
@@ -127,24 +127,24 @@ const App = () => {
       </div>
 
       {/* Buttons */}
-      <div className="mt-6 flex justify-center space-x-4">
+      <div className="mt-8 flex justify-center space-x-4">
         <button
           onClick={calculateSGPA}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-all duration-200 shadow-lg font-semibold"
         >
           Calculate
         </button>
         <button
           onClick={switchToGradeMode}
-          className="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition-colors duration-200"
+          className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-all duration-200 shadow-lg font-semibold"
         >
-          Grade
+          Grade Mode
         </button>
       </div>
 
       {/* Output */}
       {sgpa && (
-        <div className="mt-6 text-center font-semibold text-lg text-green-400">
+        <div className="mt-8 text-center font-bold text-xl text-emerald-400">
           {sgpa}
         </div>
       )}
